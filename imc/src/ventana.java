@@ -87,6 +87,7 @@ public class ventana extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 setSize(500, 500);
+                setLocationRelativeTo(null);
                 boton.setVisible(false);
                 etiqueta.setVisible(false); 
                 Datos(); 
@@ -197,6 +198,9 @@ public class ventana extends JFrame{
                     JOptionPane.showMessageDialog(null,"Faltan campos");
                 }else {
                     JOptionPane.showMessageDialog(null,"Registro Exitoso");
+                    Menu obj = new Menu();
+                    obj.setVisible(true);
+                    setVisible(false); 
                 }
 
 
