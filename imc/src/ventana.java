@@ -3,7 +3,9 @@ import javax.swing.event.AncestorListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.*;
+import javax.swing.*; // ettrega 50% 21 julio 
+// 7 julio sig cascaron 
+
 
 public class ventana extends JFrame{
 
@@ -13,11 +15,18 @@ public class ventana extends JFrame{
          * 2 apellido 
          * 3 numero de telefono 
          * 4 contacto de emergencia 
-         * 5 peso
-         * 6 altura 
          * 7 correo 
-         * 8 contraseña 
          * 9 numero de seguro 
+         * edad 
+         * sexo 
+         * alergias 
+         * tipo sangre 
+         * curp 
+         * nacionalidad 
+         * estado civil 
+         * direccion 
+         * fecha nacimiento 
+         * fecha en cada ventana !!!!
      */
 
     private JPanel panel ;  
@@ -43,6 +52,7 @@ public class ventana extends JFrame{
     private JTextArea area; 
     private JButton boton; 
     private JButton boton2; 
+    private JButton boton3; 
     private String nombre; 
     private String apellido; 
     private String telefono; 
@@ -56,13 +66,12 @@ public class ventana extends JFrame{
     
 
     public ventana(){
-        this.setSize(300,300);
+        this.setSize(400,300);
         this.setLocationRelativeTo(null);
         this.setResizable(false);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setTitle("Imc");
         paneles();
-       
         login(); 
 
     }
@@ -77,11 +86,26 @@ public class ventana extends JFrame{
     public void login(){
 
         etiqueta = new JLabel("Bienvenido"); 
-        etiqueta.setBounds(120, 40, 120, 20);
+        etiqueta.setBounds(180, 40, 120, 20);
         panel.add(etiqueta); 
 
+        boton3 = new JButton("Iniciar Sesion"); 
+        boton3.setBounds(50, 140, 120, 20);
+        boton3.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+               Inicio obj2 = new Inicio(); 
+               obj2.setVisible(true);
+               setVisible(false);
+
+            }
+            
+        });
+        panel.add(boton3); 
+
         boton = new JButton("Registrar"); 
-        boton.setBounds(100,140,120,20);
+        boton.setBounds(50,180,120,20);
         boton.addActionListener(new ActionListener(){
 
             @Override
@@ -89,6 +113,7 @@ public class ventana extends JFrame{
                 setSize(500, 500);
                 setLocationRelativeTo(null);
                 boton.setVisible(false);
+                boton3.setVisible(false);
                 etiqueta.setVisible(false); 
                 Datos(); 
 
