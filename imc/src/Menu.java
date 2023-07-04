@@ -41,11 +41,11 @@ public class Menu extends JFrame{
     private JTextField campo8; 
     private JTextArea area; 
     public Menu(){
-        this.setSize(600, 400);
-        this.setLocationRelativeTo(null);
-        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
-        this.setTitle("Menu");
-        this.setResizable(false);
+        this.setSize(600, 400); // tamaño 
+        this.setLocationRelativeTo(null); // centre 
+        this.setDefaultCloseOperation(EXIT_ON_CLOSE);// cierre 
+        this.setTitle("Menu"); // titulo
+        this.setResizable(false);// no se puede 
         paneles(); 
         menu(); 
         

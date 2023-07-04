@@ -9,15 +9,14 @@ import javax.swing.*; // ettrega 50% 21 julio
 
 public class ventana extends JFrame{
 
-    /*
-         * informacion personal que se pedira 
-         * tipo sangre 
+    /*    
+            DATOS FALTANTES 
          * curp 
          * nacionalidad 
          * estado civil 
          * direccion 
          * fecha nacimiento 
-         * fecha en cada ventana !!!!
+         * fecha en cada ventana !!!!  es pa luis viejo 
      */
 
     private JPanel panel ;  
