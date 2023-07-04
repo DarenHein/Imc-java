@@ -66,6 +66,7 @@ public class ventana extends JFrame{
     
 
     public ventana(){
+
         this.setSize(400,300);
         this.setLocationRelativeTo(null);
         this.setResizable(false);
@@ -104,8 +105,10 @@ public class ventana extends JFrame{
         });
         panel.add(boton3); 
 
+        // todo de todo este metodo no funciona o esta furea de servicio jajajja 
         boton = new JButton("Registrar"); 
         boton.setBounds(50,180,120,20);
+        boton.setVisible(false); 
         boton.addActionListener(new ActionListener(){
 
             @Override
@@ -115,7 +118,7 @@ public class ventana extends JFrame{
                 boton.setVisible(false);
                 boton3.setVisible(false);
                 etiqueta.setVisible(false); 
-                Datos(); 
+                
 
             }
 

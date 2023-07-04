@@ -71,6 +71,9 @@ public class Inicio extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                //Todo aun no se agregan las implementaciones de incio de secion por el momento solo va a ver el usuario que se registra y el administrador entrando esos dos ya se acaba todo lo de esta pagina 
+               Menu obj2 = new Menu(); 
+               obj2.setVisible(true);
+               setVisible(false);
             }
             
         });
