@@ -11,15 +11,6 @@ public class ventana extends JFrame{
 
     /*
          * informacion personal que se pedira 
-         * 1 nombre 
-         * 2 apellido 
-         * 3 numero de telefono 
-         * 4 contacto de emergencia 
-         * 7 correo 
-         * 9 numero de seguro 
-         * edad 
-         * sexo 
-         * alergias 
          * tipo sangre 
          * curp 
          * nacionalidad 

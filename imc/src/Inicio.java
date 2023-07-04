@@ -43,11 +43,11 @@ public class Inicio extends JFrame {
         panel.add(etiqueta3);
 
         campo = new JTextField(); 
-        campo.setBounds(120, 90, 170, 20);
+        campo.setBounds(120, 90, 150, 20);
         panel.add(campo); 
 
         campo2 = new JTextField(); 
-        campo2.setBounds(120, 130, 170, 20);
+        campo2.setBounds(120, 130, 150, 20);
         panel.add(campo2); 
 
         boton = new JButton("Regresar"); 

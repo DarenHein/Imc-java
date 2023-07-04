@@ -28,6 +28,9 @@ public class Menu extends JFrame{
     private JLabel etiqueta14; 
     private JLabel etiqueta15; 
     private JLabel etiqueta16; 
+    private JLabel etiqueta17; 
+    private JLabel etiqueta18; 
+    private JLabel etiqueta19; 
     private JTextField campo; 
     private JTextField campo2; 
     private JTextField campo3; 
@@ -155,21 +158,33 @@ public class Menu extends JFrame{
         etiqueta7.setBounds(20,150,120,20);
         panel.add(etiqueta7);
 
-        etiqueta8 = new JLabel("Sexo:"); 
+        etiqueta8 = new JLabel("No.Emergencia:"); 
         etiqueta8.setBounds(20,180,120,20);
         panel.add(etiqueta8);
 
-        etiqueta9 = new JLabel("contraseña:"); 
+        etiqueta9 = new JLabel("No.Seguro:"); 
         etiqueta9.setBounds(20,210,120,20);
         panel.add(etiqueta9);
 
         etiqueta10 = new JLabel("Correo:"); 
-        etiqueta10.setBounds(20,270,120,20);
+        etiqueta10.setBounds(20,240,120,20);
         panel.add(etiqueta10);
 
-        etiqueta11= new JLabel("Notas:"); 
-        etiqueta11.setBounds(20,330,120,20);
+        etiqueta11= new JLabel("Alergias :"); 
+        etiqueta11.setBounds(20,270,120,20);
         panel.add(etiqueta11);
+
+        etiqueta12= new JLabel("Edad:"); 
+        etiqueta12.setBounds(20,300,120,20);
+        panel.add(etiqueta12);
+
+        etiqueta13= new JLabel("Sexo:"); 
+        etiqueta13.setBounds(20,330,120,20);
+        panel.add(etiqueta13);
+       
+        etiqueta14= new JLabel("T.Sangre:"); 
+        etiqueta14.setBounds(20,360,120,20);
+        panel.add(etiqueta14);
 
         campo = new JTextField(); 
         campo.setBounds(130, 90, 200, 20);
