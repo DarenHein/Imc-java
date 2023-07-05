@@ -8,6 +8,7 @@ public class Inicio extends JFrame {
     private JButton boton; 
     private JButton boton2; 
     private JButton boton3 ; // todo este boton que sea secreto y que sirva para el ingreso del menu del adminitrador  
+    private JButton boton4; 
     private JLabel etiqueta; 
     private JLabel etiqueta2; 
     private JLabel etiqueta3; 
@@ -65,7 +66,7 @@ public class Inicio extends JFrame {
         panel.add(boton);
 
         boton = new JButton("Ingresar"); 
-        boton.setBounds(150, 220, 100, 20);
+        boton.setBounds(150, 220, 120, 20);
         boton.addActionListener(new ActionListener() {
 
             @Override
@@ -78,6 +79,7 @@ public class Inicio extends JFrame {
             
         });
         panel.add(boton);
+
 
         
 

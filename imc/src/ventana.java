@@ -1,4 +1,3 @@
-import javax.swing.JFrame;
 import javax.swing.event.AncestorListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -43,6 +42,7 @@ public class ventana extends JFrame{
     private JButton boton; 
     private JButton boton2; 
     private JButton boton3; 
+    private JButton boton4; 
     private String nombre; 
     private String apellido; 
     private String telefono; 
@@ -64,6 +64,7 @@ public class ventana extends JFrame{
         this.setTitle("Imc");
         paneles();
         login(); 
+        adminitrador();
 
     }
     public void paneles(){
@@ -77,11 +78,11 @@ public class ventana extends JFrame{
     public void login(){
 
         etiqueta = new JLabel("Bienvenido"); 
-        etiqueta.setBounds(180, 40, 120, 20);
+        etiqueta.setBounds(160, 40, 120, 20);
         panel.add(etiqueta); 
 
-        boton3 = new JButton("Iniciar Sesion"); 
-        boton3.setBounds(50, 140, 120, 20);
+        boton3 = new JButton("Usuario"); 
+        boton3.setBounds(50, 100, 100, 100);
         boton3.addActionListener(new ActionListener() {
 
             @Override
@@ -227,6 +228,24 @@ public class ventana extends JFrame{
             
         });
         panel.add(boton2);  
+
+    }
+
+    public void adminitrador(){
+        
+        boton4 = new JButton("Administrador"); 
+        boton4.setBounds(230, 100, 100, 100);
+        boton4.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+               Inicio obj2 = new Inicio(); 
+               obj2.setVisible(true); 
+               setVisible(false); 
+            }
+            
+        });
+        panel.add(boton4);
 
     }
 
