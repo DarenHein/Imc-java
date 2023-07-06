@@ -6,6 +6,11 @@ import javax.swing.*;
 
 public class Menu extends JFrame {
 
+    private String altura; 
+    private String peso; 
+    private float altura2; 
+    private float peso2; 
+    private float resultado; 
     private JPanel panel;
     private JButton boton;
     private JButton boton2;
@@ -318,15 +323,20 @@ public class Menu extends JFrame {
 
         boton6 = new JButton("Calcular "); 
         boton6.setBounds(60, 230, 120, 20);
-        boton6.addActionListener(new ActionListener() {
+        boton6.addActionListener(new ActionListener(){
 
             @Override
             public void actionPerformed(ActionEvent e) {
                 System.out.println("Prueba de boton 6");
-              
-            }
-            
-        });
+                altura = campo16.getText(); 
+                peso = campo15.getText(); 
+                altura2 = Float.parseFloat(altura); 
+                peso2 = Float.parseFloat(peso); 
+                if (altura2 > 2.0 || peso2 > 180.0){
+                    JOptionPane
+                }
+            }});
+
         panel.add(boton6); 
 
         boton7 = new JButton("Regresar ");
@@ -337,7 +347,7 @@ public class Menu extends JFrame {
             public void actionPerformed(ActionEvent e) {
 
                 System.out.println("Prueba de boton 17 ");
-                menu(); 
+                
             
             }
             
