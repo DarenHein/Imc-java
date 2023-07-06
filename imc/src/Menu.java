@@ -330,10 +330,35 @@ public class Menu extends JFrame {
                 System.out.println("Prueba de boton 6");
                 altura = campo16.getText(); 
                 peso = campo15.getText(); 
+                if (altura.isEmpty() || peso.isEmpty()) {
+                    JOptionPane.showMessageDialog(null, "Ingresa valores en ambos campos de peso y altura");
+                return;
+                }
+                if (!altura.matches("\\d*") || !peso.matches("\\d*")) {
+                    JOptionPane.showMessageDialog(null, "Ingresa caracteres numéricos válidos en los campos de peso y altura");
+                    return;
+                }
                 altura2 = Float.parseFloat(altura); 
                 peso2 = Float.parseFloat(peso); 
                 if (altura2 > 2.0 || peso2 > 180.0){
-                    JOptionPane
+                    JOptionPane.showMessageDialog(null, "No puede haber edad ni peso con los parametros indicados ");
+                }
+                else if (altura2 < 0 || peso2 < 0){
+                    JOptionPane.showMessageDialog(null, "No puede haber edad ni peso con los parametros indicados ");
+                }
+                else if (altura2 == 0 || peso2 == 0 ){
+                    JOptionPane.showMessageDialog(null, "No puede haber edad ni peso con los parametros indicados ");
+                }
+                else{
+                    try {
+                        resultado = peso2 / (altura2 * altura2);
+                        JOptionPane.showMessageDialog(null, "Tu imc es de :" + resultado);
+                    
+                    } catch (Exception e3) {
+                        // TODO: handle exception
+                        JOptionPane.showMessageDialog(null,"Ingresa carcteres validos ");
+
+                    }  
                 }
             }});
 
