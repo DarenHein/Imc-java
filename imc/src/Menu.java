@@ -29,7 +29,17 @@ public class Menu extends JFrame {
     private JLabel etiqueta16;
     private JLabel etiqueta17;
     private JLabel etiqueta18;
+    // todo etiquetas de calculadroa 
     private JLabel etiqueta19;
+    private JLabel etiqueta20;
+    private JLabel etiqueta21;  
+    // todo botones de calculadora 
+    private JButton boton5 ; 
+    private JButton boton6; 
+    private JButton boton7; 
+    // todo campos de texto 
+    private JTextField campo15; 
+    private JTextField campo16; 
     private JTextField campo;
     private JTextField campo2;
     private JTextField campo3;
@@ -67,25 +77,30 @@ public class Menu extends JFrame {
           etiqueta = new JLabel("Menu");
         etiqueta.setBounds(270, 20, 200, 40);
         etiqueta.setFont(new Font("Arial", Font.BOLD | Font.ITALIC, 32));
+        etiqueta.setVisible(true);
         panel.add(etiqueta);
 
         etiqueta2 = new JLabel("Bienvenido, Doctor Luis Carbajal");
         etiqueta2.setBounds(160, 120, 300, 20);
         etiqueta2.setFont(new Font("Arial", Font.BOLD, 18));
         etiqueta2.setForeground(new Color(0, 128, 0));
+        etiqueta2.setVisible(true);
         panel.add(etiqueta2);
 
         etiqueta3 = new JLabel("'Calculadora de IMC'");
         etiqueta3.setBounds(230, 160, 200, 20);
+        etiqueta.setVisible(true);
         panel.add(etiqueta3);
 
         etiqueta4 = new JLabel("Creada por team .....");
         etiqueta4.setBounds(160, 190, 300, 20);
         etiqueta4.setForeground(new Color(0, 128, 0));
+        etiqueta.setVisible(true);
         panel.add(etiqueta4);
 
         boton = new JButton("Registro");
         boton.setBounds(0, 50, 100, 100);
+        boton.setVisible(true); 
         boton.addActionListener(new ActionListener() {
 
             @Override
@@ -98,6 +113,7 @@ public class Menu extends JFrame {
 
         boton2 = new JButton("Tabla Imc ");
         boton2.setBounds(0, 140, 100, 100);
+        boton2.setVisible(true);
         boton2.addActionListener(new ActionListener() {
 
             @Override
@@ -110,11 +126,14 @@ public class Menu extends JFrame {
 
         boton3 = new JButton("Calculadora");
         boton3.setBounds(0, 230, 100, 100);
+        boton3.setVisible(true);
         boton3.addActionListener(new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                calculadora(); 
+                Grafica obj2 = new Grafica(); 
+                obj2.setVisible(true); 
             }
 
         });
@@ -122,6 +141,7 @@ public class Menu extends JFrame {
 
         boton4 = new JButton("Cerrar");
         boton4.setBounds(430, 330, 120, 20);
+        boton4.setVisible(true);
         boton4.addActionListener(new ActionListener() {
 
             @Override
@@ -257,5 +277,75 @@ public class Menu extends JFrame {
         campo14 = new JTextField();
         campo14.setBounds(145, 550, 200, 20);
         panel.add(campo14);
+    }
+    public void calculadora(){
+        setSize(400, 400);
+        setLocationRelativeTo(null);
+        setTitle("Calculadora");
+        boton.setVisible(false);
+        boton2.setVisible(false);
+        boton3.setVisible(false);
+        boton4.setVisible(false);
+        etiqueta.setVisible(false);
+        etiqueta2.setVisible(false);
+        etiqueta3.setVisible(false);
+        etiqueta4.setVisible(false);
+
+        etiqueta19 = new JLabel("Calculadora"); 
+        etiqueta19.setBounds(150,40,120,20);
+        etiqueta19.setVisible(true);
+        panel.add(etiqueta19); 
+
+        etiqueta20 = new JLabel("Peso : Kilogramos"); 
+        etiqueta20.setBounds(40,100 , 160, 20);
+        etiqueta20.setVisible(true); 
+        panel.add(etiqueta20); 
+
+        etiqueta21 = new JLabel("Altura : Metros "); 
+        etiqueta21.setBounds(40, 150, 160, 20);
+        etiqueta21.setVisible(true);
+        panel.add(etiqueta21);  
+
+        campo15 = new JTextField(); 
+        campo15.setBounds(200,100,120,20); 
+        campo15.setVisible(true); 
+        panel.add(campo15); 
+
+        campo16 = new JTextField(); 
+        campo16.setBounds(200, 150, 120, 20);
+        campo16.setVisible(true); 
+        panel.add(campo16); 
+
+        boton6 = new JButton("Calcular "); 
+        boton6.setBounds(60, 230, 120, 20);
+        boton6.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.out.println("Prueba de boton 6");
+              
+            }
+            
+        });
+        panel.add(boton6); 
+
+        boton7 = new JButton("Regresar ");
+        boton7.setBounds(210, 230, 129, 20);
+        boton7.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                System.out.println("Prueba de boton 17 ");
+                menu(); 
+            
+            }
+            
+        }); 
+        panel.add(boton7); 
+
+
+        
+
     }
 }
