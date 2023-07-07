@@ -14,6 +14,12 @@ public class Inicio extends JFrame {
     private JLabel etiqueta3; 
     private JTextField campo; 
     private JTextField campo2; 
+    private String usuario = "Doctor"; 
+    private String contraseña = "1234"; 
+    private String admin = "Luis"; 
+    private String contraseña3 = "6789";
+    private String usuario2 ; 
+    private String contraseña2; 
     
     public Inicio(){
         this.setSize(300,300);
@@ -71,10 +77,27 @@ public class Inicio extends JFrame {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-               //Todo aun no se agregan las implementaciones de incio de secion por el momento solo va a ver el usuario que se registra y el administrador entrando esos dos ya se acaba todo lo de esta pagina 
                Menu obj2 = new Menu(); 
-               obj2.setVisible(true);
-               setVisible(false);
+               usuario2 = campo.getText(); 
+               contraseña2 = campo2.getText(); 
+               if (usuario2.isEmpty() || contraseña2.isEmpty()){
+                JOptionPane.showMessageDialog(null, "Campos Incompletos");
+               }
+               else if(usuario2.equals(usuario) && contraseña2.equals(contraseña)){
+                    obj2.setVisible(true);
+                    setVisible(false);
+
+               }
+               else if (usuario2.equals(admin) && contraseña2.equals(contraseña3)){
+                    obj2.setVisible(true);
+                    setVisible(false);
+               }
+               else{
+                JOptionPane.showMessageDialog(null,"Usuario y contraseña incorrectos");
+               }
+               
+              
+
             }
             
         });

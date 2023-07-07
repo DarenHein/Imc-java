@@ -39,7 +39,7 @@ public class Menu extends JFrame {
     private JLabel etiqueta20;
     private JLabel etiqueta21;  
     // todo botones de calculadora 
-    private JButton boton5 ; 
+    private JButton boton5 ; // boton de regresar del registro 
     private JButton boton6; 
     private JButton boton7; 
     // todo campos de texto 
@@ -79,7 +79,7 @@ public class Menu extends JFrame {
 
     public void menu() {
 
-          etiqueta = new JLabel("Menu");
+        etiqueta = new JLabel("Menu");
         etiqueta.setBounds(270, 20, 200, 40);
         etiqueta.setFont(new Font("Arial", Font.BOLD | Font.ITALIC, 32));
         etiqueta.setVisible(true);
@@ -282,6 +282,60 @@ public class Menu extends JFrame {
         campo14 = new JTextField();
         campo14.setBounds(145, 550, 200, 20);
         panel.add(campo14);
+
+        boton5= new JButton("Regresar"); 
+        boton5.setBounds(450, 550, 120, 20);
+        boton5.setVisible(true);
+        boton5.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+               setLocationRelativeTo(null);
+               System.out.println("Prueba de boton 5 ");
+               setSize(600, 400);
+               etiqueta5.setVisible(false);
+               etiqueta6.setVisible(false);
+               etiqueta7.setVisible(false);
+               etiqueta8.setVisible(false);
+               etiqueta9.setVisible(false);
+               etiqueta10.setVisible(false);
+               etiqueta11.setVisible(false);
+               etiqueta12.setVisible(false);
+               etiqueta13.setVisible(false);
+               etiqueta14.setVisible(false);
+               etiqueta15.setVisible(false);
+               etiqueta16.setVisible(false);
+               etiqueta17.setVisible(false);
+               etiqueta18.setVisible(false);
+               campo.setVisible(false);
+               campo2.setVisible(false);
+               campo3.setVisible(false);
+               campo4.setVisible(false);
+               campo5.setVisible(false);
+               campo6.setVisible(false);
+               campo7.setVisible(false);
+               campo8.setVisible(false);
+               campo9.setVisible(false);
+               campo10.setVisible(false);
+               campo11.setVisible(false);
+               campo12.setVisible(false);
+               campo13.setVisible(false);
+               campo14.setVisible(false);
+               // todo mostrar 
+               boton.setVisible(true);
+               boton2.setVisible(true);
+               boton3.setVisible(true);
+               boton4.setVisible(true);
+               etiqueta.setVisible(true);
+               etiqueta2.setVisible(true);
+               etiqueta3.setVisible(true);
+               etiqueta4.setVisible(true);
+            }
+            
+        });
+        panel.add(boton5); 
+
+        
     }
     public void calculadora(){
         setSize(400, 400);
@@ -353,9 +407,9 @@ public class Menu extends JFrame {
                     try {
                         resultado = peso2 / (altura2 * altura2);
                         JOptionPane.showMessageDialog(null, "Tu imc es de :" + resultado);
+                        
                     
                     } catch (Exception e3) {
-                        // TODO: handle exception
                         JOptionPane.showMessageDialog(null,"Ingresa carcteres validos ");
 
                     }  
@@ -372,7 +426,24 @@ public class Menu extends JFrame {
             public void actionPerformed(ActionEvent e) {
 
                 System.out.println("Prueba de boton 17 ");
-                
+                setSize(600, 400);
+                etiqueta19.setVisible(false);
+                etiqueta20.setVisible(false);
+                etiqueta21.setVisible(false);
+                campo15.setVisible(false);
+                campo16.setVisible(false);
+                boton6.setVisible(false);
+                boton7.setVisible(false);
+                etiqueta.setVisible(true);
+                etiqueta2.setVisible(true);
+                etiqueta3.setVisible(true);
+                etiqueta4.setVisible(true);
+                boton.setVisible(true);
+                boton2.setVisible(true);
+                boton4.setVisible(true);
+                boton3.setVisible(true);
+                Grafica obj4 = new Grafica(); 
+                obj4.setVisible(false);
             
             }
             
