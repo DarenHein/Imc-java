@@ -18,7 +18,9 @@ public class Menu extends JFrame{
     JLabel etiqueta; 
     JLabel etiqueta_hora; 
     JLabel etiqueta_nombre; 
+    JLabel etiqueta_saludo; 
     JLabel etiqueta_barra; 
+    JLabel etiqueta_slogan; 
     JButton boton_registro; 
     JButton boton_Consulta; 
     JButton boton_Calculadora;  
@@ -26,6 +28,7 @@ public class Menu extends JFrame{
     ImageIcon icono_registro; 
     ImageIcon icono_Consulta; 
     ImageIcon icono_Calculadora; 
+    JLabel intro; 
 
     public void setDato(String dato){
 
@@ -36,7 +39,7 @@ public class Menu extends JFrame{
     
     ImageIcon icono = new ImageIcon("C:/Users/Daren/Downloads/Imc-java/imc_Mark2/Imc2/src/imc.png"); 
     public Menu(){
-        this.setSize(800,600); 
+        this.setSize(800,500); 
         this.setLocationRelativeTo(null); 
         this.setTitle("Menu");
         this.setIconImage(icono.getImage());
@@ -73,7 +76,7 @@ public class Menu extends JFrame{
         timer.start();
         icono_registro = new ImageIcon("C:/Users/Daren/Downloads/Imc-java/imc_Mark2/Imc2/src/edit.png");
         boton_registro = new JButton(); 
-        boton_registro.setBounds(100, 200, 80, 80);
+        boton_registro.setBounds(230, 250, 80, 80);
         boton_registro.setContentAreaFilled(false);
         boton_registro.setBorderPainted(false);
         boton_registro.setIcon(new ImageIcon(icono_registro.getImage().getScaledInstance(boton_registro.getWidth(),boton_registro.getHeight(),Image.SCALE_SMOOTH)));
@@ -81,7 +84,7 @@ public class Menu extends JFrame{
 
         icono_Consulta = new ImageIcon("C:/Users/Daren/Downloads/Imc-java/imc_Mark2/Imc2/src/database.png");
         boton_Consulta = new JButton(); 
-        boton_Consulta.setBounds(350, 200, 80, 80);
+        boton_Consulta.setBounds(350, 250, 80, 80);
         boton_Consulta.setContentAreaFilled(false);
         boton_Consulta.setBorderPainted(false);
         boton_Consulta.setIcon(new ImageIcon(icono_Consulta.getImage().getScaledInstance(boton_Consulta.getWidth(),boton_Consulta.getHeight(),Image.SCALE_SMOOTH)));
@@ -89,14 +92,30 @@ public class Menu extends JFrame{
 
         icono_Calculadora = new ImageIcon("C:/Users/Daren/Downloads/Imc-java/imc_Mark2/Imc2/src/keys.png");
         boton_Calculadora = new JButton(); 
-        boton_Calculadora.setBounds(220, 350, 80, 80);
+        boton_Calculadora.setBounds(100, 250, 80, 80);
         boton_Calculadora.setContentAreaFilled(false);
         boton_Calculadora.setBorderPainted(false);
         boton_Calculadora.setIcon(new ImageIcon(icono_Calculadora.getImage().getScaledInstance(boton_Calculadora.getWidth(),boton_Calculadora.getHeight(),Image.SCALE_SMOOTH)));
-        panel.add(boton_Calculadora); 
-
+        panel.add(boton_Calculadora);
         
+        etiqueta_slogan = new JLabel(); 
+        etiqueta_slogan.setBounds(580, 100, 220, 220);
+        etiqueta_slogan.setText("<html>Precision y eficiencia<br> para la salud </html> ");
+        etiqueta_slogan.setFont(new Font("arial",Font.BOLD,18));
+        etiqueta_slogan.setForeground(Color.white);
+        panel.add(etiqueta_slogan); 
 
+        etiqueta_saludo = new JLabel("Bienvenido"); 
+        etiqueta_saludo.setBounds(200, 30, 200,50);
+        etiqueta_saludo.setFont(new Font("arial",Font.BOLD,22)); 
+        panel.add(etiqueta_saludo); 
+
+        intro = new JLabel(); 
+        intro.setBounds(30, 10, 320, 220);
+        intro.setText("<html>Descubre una forma mas inteligente de cuidar tu cuerpo con nuestra herramienta de IMC.Comienza hoy tu viaje hacia una vida saludable <br>con nuestro software de vanguardia! </html>");
+        intro.setForeground(Color.gray);
+        panel.add(intro); 
+        
         etiqueta_barra = new JLabel(); 
         etiqueta_barra.setBounds(550,0,500,600); 
         etiqueta_barra.setBackground(Color.blue);
