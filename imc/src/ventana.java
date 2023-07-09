@@ -64,7 +64,7 @@ public class ventana extends JFrame{
         this.setTitle("Imc");
         paneles();
         login(); 
-        adminitrador();
+       
 
     }
     public void paneles(){
