@@ -1,0 +1,42 @@
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.Timer;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+public class RelojDigital extends JFrame {
+    private JLabel labelHora;
+
+    public RelojDigital() {
+        setTitle("Reloj Digital");
+        setSize(200, 100);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        labelHora = new JLabel();
+        labelHora.setFont(new Font("Arial", Font.BOLD, 24));
+        add(labelHora);
+
+        Timer timer = new Timer(1000, new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                mostrarHoraActual();
+            }
+        });
+        timer.start();
+    }
+
+    private void mostrarHoraActual() {
+        Date ahora = new Date();
+        SimpleDateFormat formateador = new SimpleDateFormat("HH:mm:ss");
+        String horaFormateada = formateador.format(ahora);
+        labelHora.setText(horaFormateada);
+    }
+
+    public static void main(String[] args) {
+        RelojDigital reloj = new RelojDigital();
+        reloj.setVisible(true);
+    }
+}
