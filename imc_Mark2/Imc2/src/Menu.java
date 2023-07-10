@@ -8,10 +8,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
 import javax.swing.*;
-
-// todo "El aliado perfecto para una gestión médica sin complicaciones."
 
 public class Menu extends JFrame{
     JPanel panel; 
@@ -96,6 +93,16 @@ public class Menu extends JFrame{
         boton_Calculadora.setContentAreaFilled(false);
         boton_Calculadora.setBorderPainted(false);
         boton_Calculadora.setIcon(new ImageIcon(icono_Calculadora.getImage().getScaledInstance(boton_Calculadora.getWidth(),boton_Calculadora.getHeight(),Image.SCALE_SMOOTH)));
+        boton_Calculadora.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Calculadora obj2 = new Calculadora(); 
+                obj2.setVisible(true); 
+                setVisible(false); 
+            }
+            
+        });
         panel.add(boton_Calculadora);
         
         etiqueta_slogan = new JLabel(); 
