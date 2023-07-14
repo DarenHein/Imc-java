@@ -30,6 +30,7 @@ public class Calculadora extends JFrame {
     JLabel etiqueta_resultado;
     JLabel etiqueta_imagen; 
     JLabel titulo_imc; 
+    String imc2; 
 
     public Calculadora(){
         this.setSize(400,400); // 700 width
@@ -126,6 +127,11 @@ public class Calculadora extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                // mandara ala ventana de registro con constructor 
+               Registro obj3 = new Registro();
+               obj3.setVisible(true); 
+               setVisible(false); 
+               obj3.setRegistro(nombre_string,altura_string,peso_string,imc2);
+
             }
 
         });
@@ -167,7 +173,7 @@ public class Calculadora extends JFrame {
                     imc = peso / (altura*altura);
                     setLocationRelativeTo(null); 
                     setSize(700,400); 
-                    String imc2 = String.valueOf(imc); 
+                    imc2 = String.valueOf(imc); 
                     etiqueta_resultado.setText(imc2);
                     if (imc <= 18.5){
                         setLocationRelativeTo(null);

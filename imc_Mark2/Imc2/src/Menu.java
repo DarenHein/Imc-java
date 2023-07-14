@@ -11,6 +11,7 @@ import java.util.Date;
 import javax.swing.*;
 
 public class Menu extends JFrame{
+    String horaFormateada; 
     JPanel panel; 
     JLabel etiqueta; 
     JLabel etiqueta_hora; 
@@ -77,6 +78,16 @@ public class Menu extends JFrame{
         boton_registro.setContentAreaFilled(false);
         boton_registro.setBorderPainted(false);
         boton_registro.setIcon(new ImageIcon(icono_registro.getImage().getScaledInstance(boton_registro.getWidth(),boton_registro.getHeight(),Image.SCALE_SMOOTH)));
+        boton_registro.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Registro obj3 = new Registro(); 
+                obj3.setVisible(true); 
+                setVisible(false); 
+            }
+            
+        }); 
         panel.add(boton_registro); 
 
         icono_Consulta = new ImageIcon("C:/Users/Daren/Downloads/Imc-java/imc_Mark2/Imc2/src/database.png");
@@ -100,6 +111,7 @@ public class Menu extends JFrame{
                 Calculadora obj2 = new Calculadora(); 
                 obj2.setVisible(true); 
                 setVisible(false); 
+                
             }
             
         });
@@ -135,8 +147,9 @@ public class Menu extends JFrame{
     private void mostrarHoraActual() {
         Date ahora = new Date();
         SimpleDateFormat formateador = new SimpleDateFormat("HH:mm:ss");
-        String horaFormateada = formateador.format(ahora);
+         horaFormateada = formateador.format(ahora);
         etiqueta_hora.setText(horaFormateada);
+        
     }
    
     
