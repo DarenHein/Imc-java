@@ -2,6 +2,9 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.Image;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
@@ -9,6 +12,9 @@ import java.awt.event.ActionListener;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.swing.*;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 
 public class Registro extends JFrame {
     JButton boton_regreso; 
@@ -55,6 +61,7 @@ public class Registro extends JFrame {
     String datosA; 
     String sexo; 
     JLabel etiqueta_hora2; 
+    String horaFormateada; 
     public void setHora(String hora ){
         this.hora = hora; 
         campo_hora.setText(hora);
@@ -246,7 +253,31 @@ public class Registro extends JFrame {
                correo = campo_correo.getText(); 
                datosA = campo_datos.getText(); 
                seguro = campo_seguro.getText(); 
-               
+               hora = campo_hora.getText(); 
+        String nombreCarpeta = seguro;
+        String nombreArchivo = nombre+".txt";
+        String contenidoArchivo = "Nombre : " + nombre + "\nApellido : "+ apellido + "\nSexo : " + sexo + "\nAltura : " + altura + "\nPeso :" + peso + "\nCorreo : " + correo + "\nSeguro : "  + seguro + "\nImc :" + imc + "\nHora :" + hora +"\nDatos : " + datosA; 
+
+        
+        File carpeta = new File(nombreCarpeta);
+        boolean carpetaCreada = carpeta.mkdir();
+
+        if (carpetaCreada) {
+            System.out.println("La carpeta se ha creado exitosamente.");
+
+            
+            File archivo = new File(carpeta, nombreArchivo);
+            try {
+                FileWriter escritor = new FileWriter(archivo);
+                escritor.write(contenidoArchivo);
+                escritor.close();
+                System.out.println("El archivo de nota se ha creado exitosamente.");
+            } catch (IOException e34) {
+                System.out.println("No se pudo crear el archivo de nota: " + e34.getMessage());
+            }
+        } else {
+            System.out.println("No se pudo crear la carpeta.");
+        }
             }
             
         });
@@ -276,7 +307,7 @@ public class Registro extends JFrame {
     private void mostrarHoraActual() {
         Date ahora = new Date();
         SimpleDateFormat formateador = new SimpleDateFormat("HH:mm:ss");
-        String horaFormateada = formateador.format(ahora);
+         horaFormateada = formateador.format(ahora);
         etiqueta_hora2.setText(horaFormateada);
         campo_hora.setText(horaFormateada);
         campo_hora.setEditable(false);

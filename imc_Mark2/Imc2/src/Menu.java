@@ -96,6 +96,16 @@ public class Menu extends JFrame{
         boton_Consulta.setContentAreaFilled(false);
         boton_Consulta.setBorderPainted(false);
         boton_Consulta.setIcon(new ImageIcon(icono_Consulta.getImage().getScaledInstance(boton_Consulta.getWidth(),boton_Consulta.getHeight(),Image.SCALE_SMOOTH)));
+        boton_Consulta.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                DataBase obj4 = new DataBase(); 
+                obj4.setVisible(true); 
+                setVisible(false); 
+            }
+            
+        });
         panel.add(boton_Consulta); 
 
         icono_Calculadora = new ImageIcon("C:/Users/Daren/Downloads/Imc-java/imc_Mark2/Imc2/src/keys.png");

@@ -37,6 +37,7 @@ public class Calculadora extends JFrame {
         this.setLocationRelativeTo(null); 
         this.setDefaultCloseOperation(EXIT_ON_CLOSE); 
         this.setTitle("Calculadora"); 
+        this.setResizable(false);
         paneles(); 
         calcu(); 
     }    

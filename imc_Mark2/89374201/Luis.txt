@@ -1,0 +1,10 @@
+Nombre : Luis
+Apellido : Manjarrez
+Sexo : Masculino
+Altura : 1.87
+Peso :59.6
+Correo : darenhein@hotmail.com
+Seguro : 89374201
+Imc :17.043667
+Hora :23:04:34
+Datos : 

@@ -1,0 +1,10 @@
+Nombre : Luis
+Apellido : Carbajal
+Sexo : Masculino
+Altura : 1.90
+Peso :89
+Correo : daren@hotmail.com
+Seguro : 2126781
+Imc :23.6565
+Hora :22:39:11
+Datos : Ninguno 

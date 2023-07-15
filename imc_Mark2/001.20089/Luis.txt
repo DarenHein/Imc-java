@@ -1,0 +1,10 @@
+Nombre : Luis
+Apellido : carbajal
+Sexo : Masculino
+Altura : 1.90
+Peso :59.9
+Correo : luis@hotmail.com
+Seguro : 001.20089
+Imc :16.592798
+Hora :23:00:37
+Datos : solo seguir la doieta 
