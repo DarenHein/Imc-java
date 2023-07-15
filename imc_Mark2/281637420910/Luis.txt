@@ -1,0 +1,10 @@
+Nombre : Luis
+Apellido : Manjarrez
+Sexo : Masculino
+Altura : 1.89
+Peso :100
+Correo : DAren@hotmail.com
+Seguro : 281637420910
+Imc :27.994738
+Hora :16:51:16
+Datos : no alergias
