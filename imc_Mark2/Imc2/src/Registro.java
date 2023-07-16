@@ -193,13 +193,13 @@ public class Registro extends JFrame {
         campo_correo.setBounds(150,310,120,20); 
         panel.add(campo_correo); 
 
-        etiqueta_hora = new JLabel("Hora"); 
+        etiqueta_hora = new JLabel("Hora y Fecha"); 
         etiqueta_hora.setBounds(80,340,120,20); 
         etiqueta_hora.setForeground(Color.gray);
         panel.add(etiqueta_hora); 
 
         campo_hora = new JTextField(); 
-        campo_hora.setBounds(150,340,120,20); 
+        campo_hora.setBounds(170,340,120,20); 
         panel.add(campo_hora); 
 
         etiqueta_numeroE = new JLabel("Numero Em"); 
@@ -290,9 +290,9 @@ public class Registro extends JFrame {
         panel.add(barra); 
 
         etiqueta_hora2 = new JLabel(); 
-        etiqueta_hora2.setBounds(570,20,170,20); 
+        etiqueta_hora2.setBounds(500,20,170,20); 
         etiqueta_hora2.setForeground(Color.gray);
-        etiqueta_hora2.setFont(new Font("Arial",Font.BOLD,22)); 
+        etiqueta_hora2.setFont(new Font("Arial",Font.BOLD,17)); 
         panel.add(etiqueta_hora2); 
         Timer timer = new Timer(1000, new ActionListener() {
             @Override
@@ -306,7 +306,7 @@ public class Registro extends JFrame {
 
     private void mostrarHoraActual() {
         Date ahora = new Date();
-        SimpleDateFormat formateador = new SimpleDateFormat("HH:mm:ss");
+        SimpleDateFormat formateador = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
          horaFormateada = formateador.format(ahora);
         etiqueta_hora2.setText(horaFormateada);
         campo_hora.setText(horaFormateada);

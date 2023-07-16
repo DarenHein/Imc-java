@@ -27,6 +27,7 @@ public class Menu extends JFrame{
     ImageIcon icono_Consulta; 
     ImageIcon icono_Calculadora; 
     JLabel intro; 
+    JLabel etiqueta_user; 
 
     public void setDato(String dato){
 
@@ -53,14 +54,20 @@ public class Menu extends JFrame{
     }
     public void menu(){
 
+        etiqueta_user = new JLabel("User:"); 
+        etiqueta_user.setBounds(690,30,120,20); 
+        etiqueta_user.setFont(new Font("arial",Font.BOLD,19)); 
+        etiqueta_user.setForeground(Color.white);
+        panel.add(etiqueta_user);   
+
         etiqueta_nombre = new JLabel(); 
-        etiqueta_nombre.setBounds(700, 30, 120, 20);
+        etiqueta_nombre.setBounds(740, 30, 120, 20);
         etiqueta_nombre.setFont(new Font("arial",Font.BOLD,19));
         etiqueta_nombre.setForeground(Color.white);
         panel.add(etiqueta_nombre); 
 
         etiqueta_hora = new JLabel(); 
-        etiqueta_hora.setBounds(700, 60, 120, 20);
+        etiqueta_hora.setBounds(590, 60, 320, 20);
         etiqueta_hora.setFont(new Font("arial",Font.BOLD,19)); 
         etiqueta_hora.setForeground(Color.white);
         panel.add(etiqueta_hora); 
@@ -156,11 +163,13 @@ public class Menu extends JFrame{
 
     private void mostrarHoraActual() {
         Date ahora = new Date();
-        SimpleDateFormat formateador = new SimpleDateFormat("HH:mm:ss");
+        SimpleDateFormat formateador = new SimpleDateFormat("dd/MM/yyyy  HH:mm:ss");
          horaFormateada = formateador.format(ahora);
         etiqueta_hora.setText(horaFormateada);
         
     }
+
+
    
     
     
