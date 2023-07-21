@@ -194,10 +194,10 @@ public class Calculadora extends JFrame {
                      boton_calcular.setVisible(false); 
                     JOptionPane.showMessageDialog(null,"Campos vacios");
                 }
-                else if (altura <= 0 || altura > 2){
+                else if (altura <= 0 || altura > 2.50){
                     JOptionPane.showMessageDialog(null,"Altura Incorracta ");
                 }
-                else if (peso <= 0 || peso >= 200.0 ){
+                else if (peso <= 0 || peso >= 597.0 ){
                     JOptionPane.showMessageDialog(null,"Peso Incorracta ");
                 }
                 else {
@@ -214,10 +214,8 @@ public class Calculadora extends JFrame {
                     setSize(700,400); 
                     imc2 = String.valueOf(imc); 
                     etiqueta_resultado.setText(imc2);
-                    if (imc >= 12.5 || imc  <=15.3 ){
-                        JOptionPane.showMessageDialog(null, "Peso muy bajo ");
-                    }
-                    else if (imc == 18.5){
+                   
+                    if (imc == 18.5){
                         setLocationRelativeTo(null);
                         campo_altura.setEditable(false);
                         campo_peso.setEditable(false);
