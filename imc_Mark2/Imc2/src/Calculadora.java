@@ -2,6 +2,9 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+
 import javax.swing.*;
 
 public class Calculadora extends JFrame {
@@ -77,6 +80,16 @@ public class Calculadora extends JFrame {
 
         campo_altura = new JTextField(); 
         campo_altura.setBounds(80, 190, 200, 20);
+        campo_altura.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyTyped(KeyEvent evt ){
+                if(campo_altura.getText().length() >= 4){
+                    evt.consume();
+
+                }
+            }
+            
+        });
         panel.add(campo_altura); 
 
         etiqueta_peso = new JLabel("Peso");
@@ -87,6 +100,16 @@ public class Calculadora extends JFrame {
 
         campo_peso = new JTextField(); 
         campo_peso.setBounds(80, 250, 200, 20);
+        campo_peso.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyTyped(KeyEvent evt ){
+                if(campo_peso.getText().length() >= 4){
+                    evt.consume();
+
+                }
+            }
+            
+        });
         panel.add(campo_peso);
 
         etiqueta_resultado = new JLabel(); 
@@ -160,10 +183,10 @@ public class Calculadora extends JFrame {
                      boton_calcular.setVisible(false); 
                     JOptionPane.showMessageDialog(null,"Campos vacios");
                 }
-                else if (altura < 1 || altura > 2  ||altura == 0){
+                else if (altura <= 0 || altura > 2){
                     JOptionPane.showMessageDialog(null,"Altura Incorracta ");
                 }
-                else if (peso > 200 || peso == 0  ){
+                else if (peso <= 0 || peso >= 200.0 ){
                     JOptionPane.showMessageDialog(null,"Peso Incorracta ");
                 }
                 else {
@@ -172,11 +195,18 @@ public class Calculadora extends JFrame {
                     //float centimetros = altura * 100;
                     titulo_imc.setVisible(true);
                     imc = peso / (altura*altura);
+                    if (imc <= 12.5 ){
+                        JOptionPane.showMessageDialog(null,"Porfavor verifica los datos ");
+                        
+                    }else{
                     setLocationRelativeTo(null); 
                     setSize(700,400); 
                     imc2 = String.valueOf(imc); 
                     etiqueta_resultado.setText(imc2);
-                    if (imc <= 18.5){
+                    if (imc >= 12.5 || imc  <=15.3 ){
+                        JOptionPane.showMessageDialog(null, "Peso muy bajo ");
+                    }
+                    else if (imc == 18.5){
                         setLocationRelativeTo(null);
                         campo_altura.setEditable(false);
                         campo_peso.setEditable(false);
@@ -242,7 +272,7 @@ public class Calculadora extends JFrame {
 
                 }
                 
-                
+            }
                } catch (Exception e2) {
 
                 JOptionPane.showMessageDialog(null,"Caracteres no validos ");
