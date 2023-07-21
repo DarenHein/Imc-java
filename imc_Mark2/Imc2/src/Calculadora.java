@@ -70,6 +70,17 @@ public class Calculadora extends JFrame {
 
         campo_nombre = new JTextField(); 
         campo_nombre.setBounds(80,130,200,20); 
+        campo_nombre.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+                char c = e.getKeyChar();
+                if (!Character.isLetter(c)) {
+                    e.consume(); // Ignorar el carácter no válido
+                    JOptionPane.showMessageDialog(null, "Error: Solo se permiten letras.", "Error", JOptionPane.ERROR_MESSAGE);
+                    campo_nombre.setText("");
+                }
+            }
+        });
         panel.add(campo_nombre);
 
         etiqueta_altura = new JLabel("Altura"); 
